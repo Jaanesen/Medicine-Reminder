@@ -14,10 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                NavigationLink(destination: EditBoundary()) {
+                    SimpleEditCard(title: "Current BPM Boundary", bodyText: "\(userData.triggerBoundary)")
+                }
                 
-                SimpleCard(title: "Current BPM Boundary", bodyText: "\(userData.triggerBoundary)")
-                
-                HeartCard(title: "avg. resting bpm".uppercased(), bodyText: "\(Int(userData.restingHeartRates.average))")
+                HeartCard(title: "avg. resting bpm".uppercased(), bodyText: "\(Double(userData.restingHeartRates.average))")
                 
                 BubbleCard(title: "Last 7 days:", values: userData.restingHeartRates, dates: userData.dates)
                 Spacer()

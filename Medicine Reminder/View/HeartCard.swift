@@ -21,7 +21,7 @@ struct HeartCard: View {
                 HStack {
                     Text(bodyText)
                         .font(.title)
-                        .fontWeight(.black)
+                        .fontWeight(.medium)
                         .foregroundColor(.primary)
                         .lineLimit(3)
                     Image(systemName: "heart.fill")

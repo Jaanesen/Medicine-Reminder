@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8280F592256560D100CEAF23 /* HeartCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F591256560D100CEAF23 /* HeartCard.swift */; };
 		8280F597256561B100CEAF23 /* BubbleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F596256561B100CEAF23 /* BubbleCard.swift */; };
+		8280F59D25657C5E00CEAF23 /* EditBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F59C25657C5E00CEAF23 /* EditBoundary.swift */; };
+		8280F5A22565804C00CEAF23 /* SimpleEditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5A12565804C00CEAF23 /* SimpleEditCard.swift */; };
 		829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF325650F70002C4490 /* AppDelegate.swift */; };
 		829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF525650F70002C4490 /* SceneDelegate.swift */; };
 		829F3BF825650F70002C4490 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF725650F70002C4490 /* ContentView.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		8280F591256560D100CEAF23 /* HeartCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartCard.swift; sourceTree = "<group>"; };
 		8280F596256561B100CEAF23 /* BubbleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCard.swift; sourceTree = "<group>"; };
+		8280F59C25657C5E00CEAF23 /* EditBoundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoundary.swift; sourceTree = "<group>"; };
+		8280F5A12565804C00CEAF23 /* SimpleEditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEditCard.swift; sourceTree = "<group>"; };
 		829F3BF025650F70002C4490 /* Medicine Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medicine Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		829F3BF325650F70002C4490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829F3BF525650F70002C4490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,7 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				829F3BF725650F70002C4490 /* ContentView.swift */,
+				8280F59C25657C5E00CEAF23 /* EditBoundary.swift */,
 				829F3C5C25655754002C4490 /* SimpleCard.swift */,
+				8280F5A12565804C00CEAF23 /* SimpleEditCard.swift */,
 				8280F591256560D100CEAF23 /* HeartCard.swift */,
 				8280F596256561B100CEAF23 /* BubbleCard.swift */,
 			);
@@ -374,7 +380,9 @@
 				8280F592256560D100CEAF23 /* HeartCard.swift in Sources */,
 				829F3C4D25652873002C4490 /* NotificationHandler.swift in Sources */,
 				829F3C442565203B002C4490 /* UserData.swift in Sources */,
+				8280F5A22565804C00CEAF23 /* SimpleEditCard.swift in Sources */,
 				829F3BF825650F70002C4490 /* ContentView.swift in Sources */,
+				8280F59D25657C5E00CEAF23 /* EditBoundary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
