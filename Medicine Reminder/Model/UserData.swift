@@ -9,8 +9,9 @@ import SwiftUI
 
 class UserData: ObservableObject {
     @Published var lastRestingHeartRate: Double = 0.0
-    @Published var restingHeartRates: Array<Double> = [0.0, 2.0]
+    @Published var restingHeartRates: Array<Double> = []
     @Published var triggerBoundary: Double = 0.0
+    @Published var dates: Array<Date> = []
 
     let notificationHandler = NotificationHandler()
 
@@ -22,9 +23,10 @@ class UserData: ObservableObject {
         triggerBoundary = boundary
     }
 
-    func setRestingHRs(heartRates: Array<Double>) {
+    func setRestingHRs(heartRates: Array<Double>, dates: Array<Date>) {
         DispatchQueue.main.async {
             self.restingHeartRates = heartRates
+            self.dates = dates
 
             if self.lastRestingHeartRate == 0.0 {
                 self.lastRestingHeartRate = self.restingHeartRates[self.restingHeartRates.count - 1]

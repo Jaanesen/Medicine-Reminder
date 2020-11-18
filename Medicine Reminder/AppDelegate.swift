@@ -112,16 +112,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             NSLog("Fetching heart rates")
             var values: Array<Double> = []
+            var dates: Array<Date> = []
             // Add the average resting heart rate to array
             statsCollection.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                 
                 if let quantity = statistics.averageQuantity() {
+                    let date = statistics.startDate
                     let value = quantity.doubleValue(for: HKUnit(from: "count/min"))
                     values.append(Double(String(format: "%.1f", value))!)
+                    dates.append(date)
                 }
             }
             if values != [] {
-                self.userData.setRestingHRs(heartRates: values)
+                self.userData.setRestingHRs(heartRates: values, dates: dates)
             }
         }
         NSLog("Executing query")

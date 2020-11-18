@@ -19,7 +19,7 @@ struct ContentView: View {
                 
                 HeartCard(title: "avg. resting bpm".uppercased(), bodyText: "\(Int(userData.restingHeartRates.average))")
                 
-                BubbleCard(title: "Last 7 days:", values: userData.restingHeartRates)
+                BubbleCard(title: "Last 7 days:", values: userData.restingHeartRates, dates: userData.dates)
                 Spacer()
             }.navigationBarTitle(Text("Medicine Reminder"))
         }
