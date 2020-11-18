@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF325650F70002C4490 /* AppDelegate.swift */; };
+		829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF525650F70002C4490 /* SceneDelegate.swift */; };
+		829F3BF825650F70002C4490 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF725650F70002C4490 /* ContentView.swift */; };
+		829F3BFA25650F72002C4490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829F3BF925650F72002C4490 /* Assets.xcassets */; };
+		829F3BFD25650F72002C4490 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829F3BFC25650F72002C4490 /* Preview Assets.xcassets */; };
+		829F3C0025650F72002C4490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829F3BFE25650F72002C4490 /* LaunchScreen.storyboard */; };
+		829F3C0525650F72002C4490 /* Medicine Reminder WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 829F3C0425650F72002C4490 /* Medicine Reminder WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		829F3C0B25650F72002C4490 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829F3C0925650F72002C4490 /* Interface.storyboard */; };
+		829F3C0D25650F73002C4490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829F3C0C25650F73002C4490 /* Assets.xcassets */; };
+		829F3C1425650F73002C4490 /* Medicine Reminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 829F3C1325650F73002C4490 /* Medicine Reminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		829F3C1925650F73002C4490 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C1825650F73002C4490 /* HostingController.swift */; };
+		829F3C1B25650F73002C4490 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C1A25650F73002C4490 /* ContentView.swift */; };
+		829F3C1D25650F73002C4490 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C1C25650F73002C4490 /* ExtensionDelegate.swift */; };
+		829F3C1F25650F73002C4490 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C1E25650F73002C4490 /* ComplicationController.swift */; };
+		829F3C2125650F74002C4490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829F3C2025650F74002C4490 /* Assets.xcassets */; };
+		829F3C2425650F74002C4490 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829F3C2325650F74002C4490 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		829F3C0625650F72002C4490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 829F3BE825650F70002C4490 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 829F3C0325650F72002C4490;
+			remoteInfo = "Medicine Reminder WatchKit App";
+		};
+		829F3C1525650F73002C4490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 829F3BE825650F70002C4490 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 829F3C1225650F73002C4490;
+			remoteInfo = "Medicine Reminder WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		829F3C2B25650F74002C4490 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				829F3C1425650F73002C4490 /* Medicine Reminder WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		829F3C2F25650F74002C4490 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				829F3C0525650F72002C4490 /* Medicine Reminder WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		829F3BF025650F70002C4490 /* Medicine Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medicine Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		829F3BF325650F70002C4490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		829F3BF525650F70002C4490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		829F3BF725650F70002C4490 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		829F3BF925650F72002C4490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		829F3BFC25650F72002C4490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		829F3BFF25650F72002C4490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		829F3C0125650F72002C4490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		829F3C0425650F72002C4490 /* Medicine Reminder WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medicine Reminder WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		829F3C0A25650F72002C4490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		829F3C0C25650F73002C4490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		829F3C0E25650F73002C4490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		829F3C1325650F73002C4490 /* Medicine Reminder WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Medicine Reminder WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		829F3C1825650F73002C4490 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		829F3C1A25650F73002C4490 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		829F3C1C25650F73002C4490 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		829F3C1E25650F73002C4490 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		829F3C2025650F74002C4490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		829F3C2325650F74002C4490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		829F3C2525650F74002C4490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		829F3BED25650F70002C4490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		829F3C1025650F73002C4490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		829F3BE725650F70002C4490 = {
+			isa = PBXGroup;
+			children = (
+				829F3BF225650F70002C4490 /* Medicine Reminder */,
+				829F3C0825650F72002C4490 /* Medicine Reminder WatchKit App */,
+				829F3C1725650F73002C4490 /* Medicine Reminder WatchKit Extension */,
+				829F3BF125650F70002C4490 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		829F3BF125650F70002C4490 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				829F3BF025650F70002C4490 /* Medicine Reminder.app */,
+				829F3C0425650F72002C4490 /* Medicine Reminder WatchKit App.app */,
+				829F3C1325650F73002C4490 /* Medicine Reminder WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		829F3BF225650F70002C4490 /* Medicine Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				829F3BF325650F70002C4490 /* AppDelegate.swift */,
+				829F3BF525650F70002C4490 /* SceneDelegate.swift */,
+				829F3BF725650F70002C4490 /* ContentView.swift */,
+				829F3BF925650F72002C4490 /* Assets.xcassets */,
+				829F3BFE25650F72002C4490 /* LaunchScreen.storyboard */,
+				829F3C0125650F72002C4490 /* Info.plist */,
+				829F3BFB25650F72002C4490 /* Preview Content */,
+			);
+			path = "Medicine Reminder";
+			sourceTree = "<group>";
+		};
+		829F3BFB25650F72002C4490 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				829F3BFC25650F72002C4490 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		829F3C0825650F72002C4490 /* Medicine Reminder WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				829F3C0925650F72002C4490 /* Interface.storyboard */,
+				829F3C0C25650F73002C4490 /* Assets.xcassets */,
+				829F3C0E25650F73002C4490 /* Info.plist */,
+			);
+			path = "Medicine Reminder WatchKit App";
+			sourceTree = "<group>";
+		};
+		829F3C1725650F73002C4490 /* Medicine Reminder WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				829F3C1825650F73002C4490 /* HostingController.swift */,
+				829F3C1A25650F73002C4490 /* ContentView.swift */,
+				829F3C1C25650F73002C4490 /* ExtensionDelegate.swift */,
+				829F3C1E25650F73002C4490 /* ComplicationController.swift */,
+				829F3C2025650F74002C4490 /* Assets.xcassets */,
+				829F3C2525650F74002C4490 /* Info.plist */,
+				829F3C2225650F74002C4490 /* Preview Content */,
+			);
+			path = "Medicine Reminder WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		829F3C2225650F74002C4490 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				829F3C2325650F74002C4490 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		829F3BEF25650F70002C4490 /* Medicine Reminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 829F3C3025650F74002C4490 /* Build configuration list for PBXNativeTarget "Medicine Reminder" */;
+			buildPhases = (
+				829F3BEC25650F70002C4490 /* Sources */,
+				829F3BED25650F70002C4490 /* Frameworks */,
+				829F3BEE25650F70002C4490 /* Resources */,
+				829F3C2F25650F74002C4490 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				829F3C0725650F72002C4490 /* PBXTargetDependency */,
+			);
+			name = "Medicine Reminder";
+			productName = "Medicine Reminder";
+			productReference = 829F3BF025650F70002C4490 /* Medicine Reminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		829F3C0325650F72002C4490 /* Medicine Reminder WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 829F3C2C25650F74002C4490 /* Build configuration list for PBXNativeTarget "Medicine Reminder WatchKit App" */;
+			buildPhases = (
+				829F3C0225650F72002C4490 /* Resources */,
+				829F3C2B25650F74002C4490 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				829F3C1625650F73002C4490 /* PBXTargetDependency */,
+			);
+			name = "Medicine Reminder WatchKit App";
+			productName = "Medicine Reminder WatchKit App";
+			productReference = 829F3C0425650F72002C4490 /* Medicine Reminder WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		829F3C1225650F73002C4490 /* Medicine Reminder WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 829F3C2825650F74002C4490 /* Build configuration list for PBXNativeTarget "Medicine Reminder WatchKit Extension" */;
+			buildPhases = (
+				829F3C0F25650F73002C4490 /* Sources */,
+				829F3C1025650F73002C4490 /* Frameworks */,
+				829F3C1125650F73002C4490 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Medicine Reminder WatchKit Extension";
+			productName = "Medicine Reminder WatchKit Extension";
+			productReference = 829F3C1325650F73002C4490 /* Medicine Reminder WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		829F3BE825650F70002C4490 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					829F3BEF25650F70002C4490 = {
+						CreatedOnToolsVersion = 12.1.1;
+					};
+					829F3C0325650F72002C4490 = {
+						CreatedOnToolsVersion = 12.1.1;
+					};
+					829F3C1225650F73002C4490 = {
+						CreatedOnToolsVersion = 12.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 829F3BEB25650F70002C4490 /* Build configuration list for PBXProject "Medicine Reminder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 829F3BE725650F70002C4490;
+			productRefGroup = 829F3BF125650F70002C4490 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				829F3BEF25650F70002C4490 /* Medicine Reminder */,
+				829F3C0325650F72002C4490 /* Medicine Reminder WatchKit App */,
+				829F3C1225650F73002C4490 /* Medicine Reminder WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		829F3BEE25650F70002C4490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				829F3C0025650F72002C4490 /* LaunchScreen.storyboard in Resources */,
+				829F3BFD25650F72002C4490 /* Preview Assets.xcassets in Resources */,
+				829F3BFA25650F72002C4490 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		829F3C0225650F72002C4490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				829F3C0D25650F73002C4490 /* Assets.xcassets in Resources */,
+				829F3C0B25650F72002C4490 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		829F3C1125650F73002C4490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				829F3C2425650F74002C4490 /* Preview Assets.xcassets in Resources */,
+				829F3C2125650F74002C4490 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		829F3BEC25650F70002C4490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */,
+				829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */,
+				829F3BF825650F70002C4490 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		829F3C0F25650F73002C4490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				829F3C1B25650F73002C4490 /* ContentView.swift in Sources */,
+				829F3C1F25650F73002C4490 /* ComplicationController.swift in Sources */,
+				829F3C1925650F73002C4490 /* HostingController.swift in Sources */,
+				829F3C1D25650F73002C4490 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		829F3C0725650F72002C4490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 829F3C0325650F72002C4490 /* Medicine Reminder WatchKit App */;
+			targetProxy = 829F3C0625650F72002C4490 /* PBXContainerItemProxy */;
+		};
+		829F3C1625650F73002C4490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 829F3C1225650F73002C4490 /* Medicine Reminder WatchKit Extension */;
+			targetProxy = 829F3C1525650F73002C4490 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		829F3BFE25650F72002C4490 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				829F3BFF25650F72002C4490 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		829F3C0925650F72002C4490 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				829F3C0A25650F72002C4490 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		829F3C2625650F74002C4490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		829F3C2725650F74002C4490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		829F3C2925650F74002C4490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Medicine Reminder WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 2LC65W424L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Medicine Reminder WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		829F3C2A25650F74002C4490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Medicine Reminder WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 2LC65W424L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Medicine Reminder WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		829F3C2D25650F74002C4490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LC65W424L;
+				IBSC_MODULE = Medicine_Reminder_WatchKit_Extension;
+				INFOPLIST_FILE = "Medicine Reminder WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		829F3C2E25650F74002C4490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LC65W424L;
+				IBSC_MODULE = Medicine_Reminder_WatchKit_Extension;
+				INFOPLIST_FILE = "Medicine Reminder WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		829F3C3125650F74002C4490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Medicine Reminder/Preview Content\"";
+				DEVELOPMENT_TEAM = 2LC65W424L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Medicine Reminder/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		829F3C3225650F74002C4490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Medicine Reminder/Preview Content\"";
+				DEVELOPMENT_TEAM = 2LC65W424L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Medicine Reminder/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		829F3BEB25650F70002C4490 /* Build configuration list for PBXProject "Medicine Reminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				829F3C2625650F74002C4490 /* Debug */,
+				829F3C2725650F74002C4490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		829F3C2825650F74002C4490 /* Build configuration list for PBXNativeTarget "Medicine Reminder WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				829F3C2925650F74002C4490 /* Debug */,
+				829F3C2A25650F74002C4490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		829F3C2C25650F74002C4490 /* Build configuration list for PBXNativeTarget "Medicine Reminder WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				829F3C2D25650F74002C4490 /* Debug */,
+				829F3C2E25650F74002C4490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		829F3C3025650F74002C4490 /* Build configuration list for PBXNativeTarget "Medicine Reminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				829F3C3125650F74002C4490 /* Debug */,
+				829F3C3225650F74002C4490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 829F3BE825650F70002C4490 /* Project object */;
+}
