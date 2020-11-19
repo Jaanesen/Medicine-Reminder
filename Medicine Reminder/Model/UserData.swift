@@ -12,15 +12,20 @@ class UserData: ObservableObject {
     @Published var restingHeartRates: Array<Double> = []
     @Published var triggerBoundary: Double = 0.0
     @Published var dates: Array<Date> = []
+    @Published var dynamicBoundary: Bool = true
 
     let notificationHandler = NotificationHandler()
 
-    func setLastRestingHR(heartRate: Double) {
+    func setLastRestingHR(heartRate: Double) -> Void {
         lastRestingHeartRate = heartRate
     }
     
-    func setTriggerBoundary (boundary: Double) {
+    func setTriggerBoundary (boundary: Double) -> Void {
         triggerBoundary = boundary
+    }
+    
+    func setDynamicBoundary (bool: Bool) -> Void {
+        dynamicBoundary = bool
     }
 
     func setRestingHRs(heartRates: Array<Double>, dates: Array<Date>) {
