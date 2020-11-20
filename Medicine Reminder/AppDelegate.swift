@@ -10,7 +10,7 @@ import HealthKit
 import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     let healthStore = HKHealthStore()
     let heartRateQuantity = HKUnit(from: "count/min")
@@ -160,6 +160,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    // MARK: - Notification Delegate
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler:
+                                    @escaping () -> Void) {
+        
+        // Perform the task associated with the action.
+        switch response.actionIdentifier {
+        case "YES_ACTION":
+            userData.increaseBoundary(value: 0.1)
+            break
+            
+        case "NO_ACTION":
+            userData.logCorrectWarning(date: Date())
+            break
+            
+        // Handle other actions…
+        
+        default:
+            break
+        }
+        
+        // Always call the completion handler when done.
+        completionHandler()
+    }
+
 
     // MARK: - UISceneSession Lifecycle
 

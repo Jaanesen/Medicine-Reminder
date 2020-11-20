@@ -15,33 +15,20 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: EditBoundary(bpmBoundary: "\(userData.triggerBoundary)", dynamicBoundary: userData.dynamicBoundary)) {
-                    SimpleEditCard(title: "Current HR Boundary".uppercased(), bodyText: "\(userData.triggerBoundary)")
+                    SimpleEditCard(title: "Current heart rate Boundary".uppercased(), bodyText: "\(userData.triggerBoundary)")
                 }
 
-                HeartCard(title: "Current resting heart rate".uppercased(), bodyText: getCurrentHR())
+                HeartCard(title: "Current resting heart rate".uppercased(), bodyText: userData.getCurrentHR())
 
-                HeartCard(title: "Average resting HR".uppercased(), bodyText: "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))")
+                HeartCard(title: "Average resting heart rate".uppercased(), bodyText: "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))")
 
                 BubbleCard(title: "Last 7 days:".uppercased(), values: userData.restingHeartRates, dates: userData.dates)
+                
                 Spacer()
             }.navigationBarTitle(Text("Medicine Reminder"))
         }
     }
 
-    private func getCurrentHR() -> String {
-        if userData.dates != [] {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EE"
-            
-            let lastDate = dateFormatter.string(from: userData.dates[userData.dates.count - 1])
-            let currentDate = dateFormatter.string(from: Date())
-
-            if lastDate == currentDate {
-                return String(userData.lastRestingHeartRate)
-            }
-        }
-        return "--"
-    }
 }
 
 // MARK: - Extensions

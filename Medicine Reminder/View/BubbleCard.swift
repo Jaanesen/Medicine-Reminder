@@ -23,6 +23,8 @@ struct BubbleCard: View {
                         ForEach(values.indices, id: \.self) { i in
                             VStack {
                                 Text(getDaysList(dates: dates)[i])
+                                    .frame(width: 35, alignment: .center)
+
                                 Text("\(Int(values[i]))")
                                     .frame(width: 35, height: 35, alignment: .center)
                                     .padding(2)

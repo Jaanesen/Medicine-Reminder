@@ -57,7 +57,7 @@ struct EditBoundary: View {
                     }
                     .padding()
                 }
-                Text("Activating dynamic boundary means the boundary value will increase everytime you are alerted while taken your medicine. This is to adjust the boundary to a correct level and prevent multiple false-alerts. If your resting heart rate has great variability it is recommended to turn this off as it might push the boundary outside of the effective range.")
+                Text("Activating dynamic boundary means the boundary value will increase everytime you are alerted while taken your medicine. This is to adjust the boundary to a correct level and prevent multiple false-alerts.")
                     .padding([.horizontal, .bottom])
                     .foregroundColor(.secondary)
                     .font(.footnote)
