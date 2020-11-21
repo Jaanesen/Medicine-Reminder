@@ -64,7 +64,7 @@ struct EditBoundary: View {
                 .actionSheet(isPresented: $showingActionSheet) {
                     ActionSheet(title: Text("Warning"), message: Text("Are you sure you want to change the boundary settings?"), buttons: [
                         .default(Text("Yes")) {
-                            userData.setTriggerBoundary(boundary: Double(bpmBoundary) ?? 0.0)
+                            userData.setTriggerBoundary(boundary: Double(bpmBoundary.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
                             userData.setDynamicBoundary(bool: dynamicBoundary)
                             self.presentationMode.wrappedValue.dismiss()
                         },
@@ -80,7 +80,7 @@ struct EditBoundary: View {
             Button("Save", action: { self.showingActionSheet = true })
                 .actionSheet(isPresented: $showingActionSheet) {
                     ActionSheet(title: Text("Warning"), message: Text("Are you sure you want to change the boundary settings?"), buttons: [
-                        .default(Text("Yes")) { userData.setTriggerBoundary(boundary: Double(bpmBoundary) ?? 0.0)
+                        .default(Text("Yes")) { userData.setTriggerBoundary(boundary: Double(bpmBoundary.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
                             userData.setDynamicBoundary(bool: dynamicBoundary)
                             self.presentationMode.wrappedValue.dismiss()
                         },
