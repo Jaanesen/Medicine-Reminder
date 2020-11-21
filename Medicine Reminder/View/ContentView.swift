@@ -10,25 +10,46 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var userData: UserData
+    
+    init() {
+        UIScrollView.appearance().backgroundColor = .systemGroupedBackground
+    }
+
 
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(destination: EditBoundary(bpmBoundary: "\(userData.triggerBoundary)", dynamicBoundary: userData.dynamicBoundary)) {
-                    SimpleEditCard(title: "Current heart rate Boundary".uppercased(), bodyText: "\(userData.triggerBoundary)")
+            ScrollView {
+                VStack {
+                    GroupBox(label: Label("Heart Rate Boundary", systemImage: "exclamationmark.circle")) {
+                        HealthValueView(value: "\(userData.triggerBoundary)", unit: "BPM")
+                    }.groupBoxStyle(HealthGroupBoxStyleNav(color: .pink, destination: EditBoundary(bpmBoundary: "\(userData.triggerBoundary)", dynamicBoundary: userData.dynamicBoundary)))
+                    .padding([.horizontal, .top])
+
+                    GroupBox(label: Label("Resting Heart Rate", systemImage: "heart.fill")) {
+                        HealthValueView(value: userData.getCurrentHR(), unit: "BPM")
+                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                    .padding([.horizontal])
+                    .padding([.top], 5)
+
+                    GroupBox(label: Label("Average Resting Heart Rate", systemImage: "sum")) {
+                        HealthValueView(value: "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))", unit: "BPM")
+                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                    .padding([.horizontal])
+                    .padding([.top], 5)
+
+                    GroupBox(label: Label("Last 7 days", systemImage: "calendar")) {
+                                BubbleView(title: "Last 7 days:".uppercased(), values: userData.restingHeartRates, dates: userData.dates)                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                    .padding([.horizontal])
+                        .padding([.top], 5)
+
+                    
+
+                    Spacer()
                 }
-
-                HeartCard(title: "Current resting heart rate".uppercased(), bodyText: userData.getCurrentHR())
-
-                HeartCard(title: "Average resting heart rate".uppercased(), bodyText: "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))")
-
-                BubbleCard(title: "Last 7 days:".uppercased(), values: userData.restingHeartRates, dates: userData.dates)
-                
-                Spacer()
-            }.navigationBarTitle(Text("Medicine Reminder"))
+            }
+            .navigationBarTitle(Text("Medicine Reminder"), displayMode: .large)
         }
     }
-
 }
 
 // MARK: - Extensions

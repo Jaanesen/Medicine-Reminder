@@ -17,59 +17,66 @@ struct EditBoundary: View {
     @State private var showingActionSheet = false
 
     var body: some View {
-        Text("You can change the boundary value which decides when to trigger alerts.")
-            .font(.body)
-            .padding([.top, .horizontal])
-            .foregroundColor(.secondary)
+        ScrollView {
+            Text("You can change the boundary value which decides when to trigger alerts.")
+                .font(.body)
+                .padding([.top, .horizontal])
+                .foregroundColor(.secondary)
 
-        VStack {
-            VStack {
-                HStack {
-                    Text("Change value manually")
-                        .padding()
-                    Spacer()
-                    TextField("Boundary", text: $bpmBoundary)
-                        .keyboardType(.decimalPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .frame(width: 120, alignment: .trailing)
-                }
-                HStack {
-                    Button("Use average from last 7 days", action: { bpmBoundary = "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))" })
-                        .padding([.horizontal])
-                }
-                Text("The boundary value should be set to 1 BPM less than your weekly average when OFF beta-blockers, or 10-12 BPM more than your average when ON beta-blocker medication, dependent on the heart rate effect of your specific medication.")
-                    .padding()
-                    .foregroundColor(.secondary)
-                    .font(.footnote)
-            }
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.3), lineWidth: 1)
-            )
-            .padding([.top, .horizontal])
-
-            VStack {
-                HStack {
-                    Toggle(isOn: $dynamicBoundary) {
-                        Text("Dynamic boundary")
+            GroupBox(label: Text("Set Value Manually")) {
+                VStack {
+                    HStack {
+                        Text("Boundary value")
+                        Spacer()
+                        TextField("Boundary", text: $bpmBoundary)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 120, alignment: .trailing)
                     }
-                    .padding()
+                    HStack {
+                        Button("Use average from last 7 days", action: { bpmBoundary = "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))" })
+                            .padding()
+                    }
+                    Text("The boundary value should be set to 1 BPM less than your weekly average when OFF beta-blockers, or 10-12 BPM more than your average when ON beta-blocker medication, dependent on the heart rate effect of your specific medication.")
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
                 }
-                Text("Activating dynamic boundary means the boundary value will increase everytime you are alerted while taken your medicine. This is to adjust the boundary to a correct level and prevent multiple false-alerts.")
-                    .padding([.horizontal, .bottom])
-                    .foregroundColor(.secondary)
-                    .font(.footnote)
+            }.groupBoxStyle(HealthGroupBoxStyle(color: .blue))
+                .padding([.horizontal])
+                .padding([.top], 5)
 
-            }
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.3), lineWidth: 1)
-            )
-            .padding([.top, .horizontal])
+            GroupBox(label: Text("Change Dynamic Boundary")) {
+                VStack {
+                    HStack {
+                        Toggle(isOn: $dynamicBoundary) {
+                            Text("Dynamic boundary")
+                        }
+                    }
+                    Text("Activating dynamic boundary means the boundary value will increase everytime you are alerted while taken your medicine. This is to adjust the boundary to a correct level and prevent multiple false-alerts.")
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
+                }
+            }.groupBoxStyle(HealthGroupBoxStyle(color: .blue))
+                .padding([.horizontal])
+                .padding([.top], 5)
 
+            Button("Save", action: { self.showingActionSheet = true })
+                .actionSheet(isPresented: $showingActionSheet) {
+                    ActionSheet(title: Text("Warning"), message: Text("Are you sure you want to change the boundary settings?"), buttons: [
+                        .default(Text("Yes")) {
+                            userData.setTriggerBoundary(boundary: Double(bpmBoundary) ?? 0.0)
+                            userData.setDynamicBoundary(bool: dynamicBoundary)
+                            self.presentationMode.wrappedValue.dismiss()
+                        },
+                        .cancel(),
+                    ])
+                }
+                .padding()
+            Spacer()
+        }
+        .dismissKeyboardOnTap()
+        .navigationBarTitle(Text("Boundary value"), displayMode: .large)
+        .navigationBarItems(trailing:
             Button("Save", action: { self.showingActionSheet = true })
                 .actionSheet(isPresented: $showingActionSheet) {
                     ActionSheet(title: Text("Warning"), message: Text("Are you sure you want to change the boundary settings?"), buttons: [
@@ -80,22 +87,38 @@ struct EditBoundary: View {
                         .cancel(),
                     ])
                 }
-            Spacer()
-
-        }
-        .navigationBarTitle(Text("Boundary value"), displayMode: .large)
-        .navigationBarItems(trailing:
-                                Button("Save", action: { self.showingActionSheet = true })
-                                .actionSheet(isPresented: $showingActionSheet) {
-                                    ActionSheet(title: Text("Warning"), message: Text("Are you sure you want to change the boundary settings?"), buttons: [
-                                        .default(Text("Yes")) { userData.setTriggerBoundary(boundary: Double(bpmBoundary) ?? 0.0)
-                                            userData.setDynamicBoundary(bool: dynamicBoundary)
-                                            self.presentationMode.wrappedValue.dismiss()
-                                        },
-                                        .cancel(),
-                                    ])
-                                }
         )
+    }
+}
 
+// MARK: - Dismiss keyboard
+
+public extension View {
+    func dismissKeyboardOnTap() -> some View {
+        modifier(DismissKeyboardOnTap())
+    }
+}
+
+public struct DismissKeyboardOnTap: ViewModifier {
+    public func body(content: Content) -> some View {
+        #if os(macOS)
+        return content
+        #else
+        return content.gesture(tapGesture)
+        #endif
+    }
+    
+    private var tapGesture: some Gesture {
+        TapGesture().onEnded(endEditing)
+    }
+    
+    private func endEditing() {
+        UIApplication.shared.connectedScenes
+            .filter {$0.activationState == .foregroundActive}
+            .map {$0 as? UIWindowScene}
+            .compactMap({$0})
+            .first?.windows
+            .filter {$0.isKeyWindow}
+            .first?.endEditing(true)
     }
 }

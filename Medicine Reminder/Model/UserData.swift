@@ -14,6 +14,7 @@ class UserData: ObservableObject {
     @Published var dates: Array<Date> = []
     @Published var dynamicBoundary: Bool = true
     @Published var warningDates: Array<Date> = []
+    var lastWarnDate: Date = Date().addingTimeInterval(-604800)
 
     let notificationHandler = NotificationHandler()
     
@@ -40,22 +41,37 @@ class UserData: ObservableObject {
     }
 
     func setRestingHRs(heartRates: Array<Double>, dates: Array<Date>) {
+        NSLog("Setting resting heart rates")
         DispatchQueue.main.async {
             self.restingHeartRates = heartRates
             self.dates = dates
 
-            //Check for new resting heart rate
+            //Check for initial resting heart rate
             if self.lastRestingHeartRate == 0.0 {
                 self.setLastRestingHR(heartRate: self.restingHeartRates[self.restingHeartRates.count - 1])
                 NSLog("Initial resting heart rate: \(self.lastRestingHeartRate)")
+                return
             }
-            
+            NSLog("Checking notification trigger")
             //Check notification trigger
             if self.isHRCurrent() && self.lastRestingHeartRate > self.triggerBoundary && self.timeChecker() {
-                self.notificationHandler.SendActionNotification(title: "Resting heart rate changed!", body: "Your new resting heart rate value is: \(self.lastRestingHeartRate)", timeInterval: 1)
-                NSLog("Sent notification")
+                NSLog("Passed trigger")
+                if self.lastWarnDate.addingTimeInterval(600) < Date() {
+                    NSLog("Passed Date check")
+                    self.lastWarnDate = Date()
+                    self.notificationHandler.SendActionNotification(title: "Beta-blocker warning!", body: "Your resting heart rate value is: \(self.lastRestingHeartRate). This is above your set boundary: \(self.triggerBoundary). Have you remembered your medication today?", timeInterval: 1)
+                    NSLog("Sent notification")
+
+                } else {
+                    NSLog("Failed Date trigger")
+                    print(self.lastWarnDate.addingTimeInterval(600))
+                }
             }
         }
+    }
+    
+    func setLastWarnDate(date: Date) {
+        self.lastWarnDate = date
     }
     
     func increaseBoundary(value: Double) {
@@ -98,7 +114,7 @@ class UserData: ObservableObject {
         let calendar = Calendar.current
         let now = Date()
         let startTime = calendar.date(
-            bySettingHour: 10,
+            bySettingHour: 13,
             minute: 0,
             second: 0,
             of: now)!

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8280F592256560D100CEAF23 /* HeartCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F591256560D100CEAF23 /* HeartCard.swift */; };
-		8280F597256561B100CEAF23 /* BubbleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F596256561B100CEAF23 /* BubbleCard.swift */; };
+		8280F597256561B100CEAF23 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F596256561B100CEAF23 /* BubbleView.swift */; };
 		8280F59D25657C5E00CEAF23 /* EditBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F59C25657C5E00CEAF23 /* EditBoundary.swift */; };
-		8280F5A22565804C00CEAF23 /* SimpleEditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5A12565804C00CEAF23 /* SimpleEditCard.swift */; };
+		8280F5A7256915D000CEAF23 /* HealthGroupBoxStyleNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5A6256915D000CEAF23 /* HealthGroupBoxStyleNav.swift */; };
+		8280F5AC2569160200CEAF23 /* HealthValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5AB2569160200CEAF23 /* HealthValueView.swift */; };
+		8280F5B5256919FD00CEAF23 /* HealthGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5B4256919FD00CEAF23 /* HealthGroupBoxStyle.swift */; };
 		829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF325650F70002C4490 /* AppDelegate.swift */; };
 		829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF525650F70002C4490 /* SceneDelegate.swift */; };
 		829F3BF825650F70002C4490 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF725650F70002C4490 /* ContentView.swift */; };
@@ -33,7 +34,6 @@
 		829F3C452565203B002C4490 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
 		829F3C4D25652873002C4490 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C4C25652873002C4490 /* NotificationHandler.swift */; };
 		829F3C4E25652873002C4490 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C4C25652873002C4490 /* NotificationHandler.swift */; };
-		829F3C5D25655754002C4490 /* SimpleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C5C25655754002C4490 /* SimpleCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,10 +79,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8280F591256560D100CEAF23 /* HeartCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartCard.swift; sourceTree = "<group>"; };
-		8280F596256561B100CEAF23 /* BubbleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCard.swift; sourceTree = "<group>"; };
+		8280F596256561B100CEAF23 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		8280F59C25657C5E00CEAF23 /* EditBoundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoundary.swift; sourceTree = "<group>"; };
-		8280F5A12565804C00CEAF23 /* SimpleEditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEditCard.swift; sourceTree = "<group>"; };
+		8280F5A6256915D000CEAF23 /* HealthGroupBoxStyleNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGroupBoxStyleNav.swift; sourceTree = "<group>"; };
+		8280F5AB2569160200CEAF23 /* HealthValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthValueView.swift; sourceTree = "<group>"; };
+		8280F5B4256919FD00CEAF23 /* HealthGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGroupBoxStyle.swift; sourceTree = "<group>"; };
 		829F3BF025650F70002C4490 /* Medicine Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medicine Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		829F3BF325650F70002C4490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829F3BF525650F70002C4490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		829F3C3E2565179C002C4490 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		829F3C432565203B002C4490 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		829F3C4C25652873002C4490 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
-		829F3C5C25655754002C4490 /* SimpleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8280F5B0256919A200CEAF23 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				8280F5A6256915D000CEAF23 /* HealthGroupBoxStyleNav.swift */,
+				8280F5B4256919FD00CEAF23 /* HealthGroupBoxStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		829F3BE725650F70002C4490 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +165,7 @@
 		829F3BF225650F70002C4490 /* Medicine Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				8280F5B0256919A200CEAF23 /* Styles */,
 				829F3C54256556FD002C4490 /* View */,
 				829F3C3625651684002C4490 /* Medicine Reminder.entitlements */,
 				829F3BF325650F70002C4490 /* AppDelegate.swift */,
@@ -224,10 +234,8 @@
 			children = (
 				829F3BF725650F70002C4490 /* ContentView.swift */,
 				8280F59C25657C5E00CEAF23 /* EditBoundary.swift */,
-				829F3C5C25655754002C4490 /* SimpleCard.swift */,
-				8280F5A12565804C00CEAF23 /* SimpleEditCard.swift */,
-				8280F591256560D100CEAF23 /* HeartCard.swift */,
-				8280F596256561B100CEAF23 /* BubbleCard.swift */,
+				8280F5AB2569160200CEAF23 /* HealthValueView.swift */,
+				8280F596256561B100CEAF23 /* BubbleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,13 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */,
-				8280F597256561B100CEAF23 /* BubbleCard.swift in Sources */,
+				8280F597256561B100CEAF23 /* BubbleView.swift in Sources */,
+				8280F5AC2569160200CEAF23 /* HealthValueView.swift in Sources */,
 				829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */,
-				829F3C5D25655754002C4490 /* SimpleCard.swift in Sources */,
-				8280F592256560D100CEAF23 /* HeartCard.swift in Sources */,
+				8280F5A7256915D000CEAF23 /* HealthGroupBoxStyleNav.swift in Sources */,
 				829F3C4D25652873002C4490 /* NotificationHandler.swift in Sources */,
+				8280F5B5256919FD00CEAF23 /* HealthGroupBoxStyle.swift in Sources */,
 				829F3C442565203B002C4490 /* UserData.swift in Sources */,
-				8280F5A22565804C00CEAF23 /* SimpleEditCard.swift in Sources */,
 				829F3BF825650F70002C4490 /* ContentView.swift in Sources */,
 				8280F59D25657C5E00CEAF23 /* EditBoundary.swift in Sources */,
 			);

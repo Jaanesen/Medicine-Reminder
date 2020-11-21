@@ -12,7 +12,7 @@ struct BubbleView: View {
     var values: Array<Double>
     var dates: Array<Date>
 
-    var body: some View {
+    @ViewBuilder var body: some View {
         HStack(alignment: .center, spacing: 10) {
             ForEach(values.indices, id: \.self) { i in
                 VStack {
@@ -20,6 +20,7 @@ struct BubbleView: View {
                         .frame(width: 35, alignment: .center)
 
                     Text("\(Int(values[i]))")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                         .frame(width: 35, height: 35, alignment: .center)
                         .padding(2)
                         .overlay(
