@@ -13,6 +13,7 @@ class UserData: ObservableObject {
     @Published var triggerBoundary: Double = 0.0
     @Published var dates: Array<Date> = []
     @Published var dynamicBoundary: Bool = true
+    @Published var dynamicBoundaryGap: Double = 3.0
     @Published var warningDates: Array<Date> = []
     var lastWarnDate: Date = Date().addingTimeInterval(-604800)
 
@@ -22,8 +23,8 @@ class UserData: ObservableObject {
         self.triggerBoundary = UserDefaults.standard.object(forKey: "triggerBoundary") as? Double ?? 0.0
         self.dynamicBoundary = UserDefaults.standard.object(forKey: "dynamicBoundary") as? Bool ?? true
         self.warningDates = UserDefaults.standard.object(forKey: "warningDates") as? Array<Date> ?? []
+        self.dynamicBoundaryGap = UserDefaults.standard.object(forKey: "dynamicBoundaryGap") as? Double ?? 3.0
     }
-
 
     func setLastRestingHR(heartRate: Double) {
         lastRestingHeartRate = heartRate
@@ -32,7 +33,11 @@ class UserData: ObservableObject {
     func setTriggerBoundary(boundary: Double) {
         triggerBoundary = boundary
         UserDefaults.standard.set(triggerBoundary, forKey: "triggerBoundary")
-        print(triggerBoundary)
+    }
+    
+    func setDynamicBoundaryGap(gap: Double) {
+        dynamicBoundaryGap = gap
+        UserDefaults.standard.set(dynamicBoundaryGap, forKey: "dynamicBoundaryGap")
     }
 
     func setDynamicBoundary(bool: Bool) {
@@ -54,7 +59,7 @@ class UserData: ObservableObject {
             }
             NSLog("Checking notification trigger")
             //Check notification trigger
-            if self.isHRCurrent() && self.lastRestingHeartRate > self.triggerBoundary && self.timeChecker() {
+            if self.isHRCurrent() && self.lastRestingHeartRate > self.triggerBoundary && self.timeChecker() && self.triggerBoundary > 20.0 {
                 NSLog("Passed trigger")
                 if self.lastWarnDate.addingTimeInterval(600) < Date() {
                     NSLog("Passed Date check")
@@ -74,9 +79,9 @@ class UserData: ObservableObject {
         self.lastWarnDate = date
     }
     
-    func increaseBoundary(value: Double) {
-        NSLog("Increasing boundary by \(value)")
-        let newValue = self.triggerBoundary + value
+    func increaseBoundary() {
+        NSLog("Increasing boundary by \(self.dynamicBoundaryGap)")
+        let newValue = self.triggerBoundary + self.dynamicBoundaryGap
         setTriggerBoundary(boundary: newValue)
     }
     
@@ -95,7 +100,7 @@ class UserData: ObservableObject {
         return "--"
     }
     
-    private func isHRCurrent() -> Bool {
+    func isHRCurrent() -> Bool {
         if self.dates != [] {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EE"

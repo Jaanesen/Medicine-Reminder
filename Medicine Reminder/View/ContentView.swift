@@ -10,42 +10,38 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var userData: UserData
-    
+
     init() {
         UIScrollView.appearance().backgroundColor = .systemGroupedBackground
     }
 
-
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    GroupBox(label: Label("Heart Rate Boundary", systemImage: "exclamationmark.circle")) {
-                        HealthValueView(value: "\(userData.triggerBoundary)", unit: "BPM")
-                    }.groupBoxStyle(HealthGroupBoxStyleNav(color: .pink, destination: EditBoundary(bpmBoundary: "\(userData.triggerBoundary)", dynamicBoundary: userData.dynamicBoundary)))
+            VStack {
+                GroupBox(label: Label("Heart Rate Boundary", systemImage: "exclamationmark.circle")) {
+                    HealthValueView(value: userData.triggerBoundary, unit: "BPM")
+                }.groupBoxStyle(HealthGroupBoxStyleNav(color: .pink, destination: EditBoundary(bpmBoundary: "\(userData.triggerBoundary)", dynamicBoundary: userData.dynamicBoundary, boundaryGap: "\(userData.dynamicBoundaryGap)")))
                     .padding([.horizontal, .top])
 
-                    GroupBox(label: Label("Resting Heart Rate", systemImage: "heart.fill")) {
-                        HealthValueView(value: userData.getCurrentHR(rHR: userData.lastRestingHeartRate), unit: "BPM")
-                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                GroupBox(label: Label("Resting Heart Rate", systemImage: "heart.fill")) {
+                    HealthValueView(value: userData.isHRCurrent() ? userData.restingHeartRates[userData.restingHeartRates.count - 1] : 0.0, unit: "BPM")
+                }.groupBoxStyle(HealthGroupBoxStyle(color: .pink))
                     .padding([.horizontal])
                     .padding([.top], 5)
 
-                    GroupBox(label: Label("Average Resting Heart Rate", systemImage: "sum")) {
-                        HealthValueView(value: "\(String(format: "%.1f", Double(userData.restingHeartRates.average)))", unit: "BPM")
-                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                GroupBox(label: Label("Average Resting Heart Rate", systemImage: "sum")) {
+                    HealthValueView(value: Double(userData.restingHeartRates.average), unit: "BPM")
+                }.groupBoxStyle(HealthGroupBoxStyle(color: .pink))
                     .padding([.horizontal])
                     .padding([.top], 5)
 
-                    GroupBox(label: Label("Last 7 Days", systemImage: "calendar")) {
-                                BubbleView(values: userData.restingHeartRates, dates: userData.dates)                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                GroupBox(label: Label("Last 7 Days", systemImage: "calendar")) {
+                    BubbleView(values: userData.restingHeartRates, dates: userData.dates)
+                }.groupBoxStyle(HealthGroupBoxStyle(color: .pink))
                     .padding([.horizontal])
-                        .padding([.top], 5)
+                    .padding([.top], 5)
 
-                    
-
-                    Spacer()
-                }
+                Spacer()
             }
             .navigationBarTitle(Text("Medicine Reminder"), displayMode: .large)
         }

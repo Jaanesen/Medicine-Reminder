@@ -208,7 +208,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
         // Perform the task associated with the action.
         switch response.actionIdentifier {
         case "YES_ACTION":
-            userData.increaseBoundary(value: 0.1)
+            userData.increaseBoundary()
             break
             
         case "NO_ACTION":

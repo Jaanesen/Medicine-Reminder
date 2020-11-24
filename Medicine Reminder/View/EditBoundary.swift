@@ -9,10 +9,10 @@ import SwiftUI
 
 struct EditBoundary: View {
     @EnvironmentObject var userData: UserData
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @State var bpmBoundary: String
     @State var dynamicBoundary: Bool
+    @State var boundaryGap: String
 
     @State private var showingActionSheet = false
 
@@ -55,6 +55,18 @@ struct EditBoundary: View {
                     Text("Activating dynamic boundary means the boundary value will increase everytime you are alerted while taken your medicine. This is to adjust the boundary to a correct level and prevent multiple false-alerts.")
                         .foregroundColor(.secondary)
                         .font(.footnote)
+                    Divider()
+                    HStack {
+                        Text("Boundary Gap")
+                        Spacer()
+                        TextField("Gap", text: $boundaryGap)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 120, alignment: .trailing)
+                    }
+                    Text("Change the gap in which the boundary value will change every time you get a notification even though you have taken your medicine.")
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
                 }
             }.groupBoxStyle(HealthGroupBoxStyle(color: .blue))
                 .padding([.horizontal])
@@ -66,7 +78,7 @@ struct EditBoundary: View {
                         .default(Text("Yes")) {
                             userData.setTriggerBoundary(boundary: Double(bpmBoundary.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
                             userData.setDynamicBoundary(bool: dynamicBoundary)
-                            self.presentationMode.wrappedValue.dismiss()
+                            userData.setDynamicBoundaryGap(gap: Double(boundaryGap.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
                         },
                         .cancel(),
                     ])
@@ -75,14 +87,14 @@ struct EditBoundary: View {
             Spacer()
         }
         .dismissKeyboardOnTap()
-        .navigationBarTitle(Text("Boundary value"), displayMode: .large)
+        .navigationBarTitle(Text("Boundary Value"), displayMode: .large)
         .navigationBarItems(trailing:
             Button("Save", action: { self.showingActionSheet = true })
                 .actionSheet(isPresented: $showingActionSheet) {
                     ActionSheet(title: Text("Warning"), message: Text("Are you sure you want to change the boundary settings?"), buttons: [
                         .default(Text("Yes")) { userData.setTriggerBoundary(boundary: Double(bpmBoundary.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
                             userData.setDynamicBoundary(bool: dynamicBoundary)
-                            self.presentationMode.wrappedValue.dismiss()
+                            userData.setDynamicBoundaryGap(gap: Double(boundaryGap.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
                         },
                         .cancel(),
                     ])

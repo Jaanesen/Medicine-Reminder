@@ -181,7 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Perform the task associated with the action.
         switch response.actionIdentifier {
         case "YES_ACTION":
-            userData.increaseBoundary(value: 3.0)
+            userData.increaseBoundary()
             break
             
         case "NO_ACTION":

@@ -95,6 +95,4 @@ class NotificationHandler {
                     (settings.authorizationStatus == .provisional) else { return }
         }
     }
-
-
 }

@@ -15,10 +15,10 @@ struct ContentView: View {
         VStack {
             Label("Resting Heart Rate", systemImage: "heart.fill")
                 .foregroundColor(.pink)
-            Text("\(userData.getCurrentHR(rHR: userData.lastRestingHeartRate))")
+            Text((userData.isHRCurrent() ? "\(String(format: "%.1f", userData.restingHeartRates[userData.restingHeartRates.count-1]))" : "--"))
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 .padding()
-            Label("Last 7 Days", systemImage: "calendar")
+            Label("Last 7 days", systemImage: "calendar")
                 .foregroundColor(.pink)
             SmallBubbleView(values: userData.restingHeartRates, dates: userData.dates)
                 .padding()
