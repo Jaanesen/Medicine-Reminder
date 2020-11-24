@@ -88,9 +88,9 @@ class UserData: ObservableObject {
     
     // MARK: - Extras
     
-    func getCurrentHR() -> String {
+    func getCurrentHR(rHR: Double) -> String {
         if isHRCurrent() {
-                return String(self.lastRestingHeartRate)
+                return String(rHR)
             }
         return "--"
     }
@@ -114,7 +114,7 @@ class UserData: ObservableObject {
         let calendar = Calendar.current
         let now = Date()
         let startTime = calendar.date(
-            bySettingHour: 13,
+            bySettingHour: 9,
             minute: 0,
             second: 0,
             of: now)!

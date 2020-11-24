@@ -1,5 +1,5 @@
 //
-//  BubbleCard.swift
+//  SmallBubbleView.swift
 //  Medicine Reminder
 //
 //  Created by Jonathan Aanesen on 18/11/2020.
@@ -7,24 +7,21 @@
 
 import SwiftUI
 
-struct BubbleView: View {
+struct SmallBubbleView: View {
     var values: Array<Double>
     var dates: Array<Date>
-
+    
     @ViewBuilder var body: some View {
-        HStack(alignment: .center, spacing: 10) {
+        HStack(alignment: .center, spacing: 2) {
             ForEach(values.indices, id: \.self) { i in
                 VStack {
-                    Text(getDaysList(dates: dates)[i])
-                        .frame(width: 35, alignment: .center)
-
                     Text("\(Int(values[i]))")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .frame(width: 35, height: 35, alignment: .center)
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .frame(width: 17, height: 17, alignment: .center)
                         .padding(2)
                         .overlay(
                             Circle()
-                                .stroke(Color.pink, lineWidth: 2)
+                                .stroke(Color.pink, lineWidth: 1)
                         )
                 }
             }

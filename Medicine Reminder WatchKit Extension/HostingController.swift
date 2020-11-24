@@ -8,9 +8,12 @@
 import WatchKit
 import Foundation
 import SwiftUI
+import UIKit
 
-class HostingController: WKHostingController<ContentView> {
-    override var body: ContentView {
-        return ContentView()
+class HostingController: WKHostingController<AnyView> {
+    let userData = (WKExtension.shared().delegate as! ExtensionDelegate).userData
+
+    override var body: AnyView {
+        return AnyView(ContentView().environmentObject(userData))
     }
 }

@@ -57,7 +57,7 @@ class NotificationHandler {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound.defaultCritical
         
         // Create the trigger as a repeating event.
         let trigger = UNTimeIntervalNotificationTrigger(

@@ -12,6 +12,8 @@
 		8280F5A7256915D000CEAF23 /* HealthGroupBoxStyleNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5A6256915D000CEAF23 /* HealthGroupBoxStyleNav.swift */; };
 		8280F5AC2569160200CEAF23 /* HealthValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5AB2569160200CEAF23 /* HealthValueView.swift */; };
 		8280F5B5256919FD00CEAF23 /* HealthGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5B4256919FD00CEAF23 /* HealthGroupBoxStyle.swift */; };
+		8280F5C5256AB45600CEAF23 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
+		8280F5D4256D094700CEAF23 /* SmallBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5D3256D094700CEAF23 /* SmallBubbleView.swift */; };
 		829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF325650F70002C4490 /* AppDelegate.swift */; };
 		829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF525650F70002C4490 /* SceneDelegate.swift */; };
 		829F3BF825650F70002C4490 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF725650F70002C4490 /* ContentView.swift */; };
@@ -31,7 +33,6 @@
 		829F3C3D25651778002C4490 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829F3C3C25651778002C4490 /* HealthKit.framework */; };
 		829F3C3F2565179C002C4490 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829F3C3E2565179C002C4490 /* HealthKit.framework */; };
 		829F3C442565203B002C4490 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
-		829F3C452565203B002C4490 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
 		829F3C4D25652873002C4490 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C4C25652873002C4490 /* NotificationHandler.swift */; };
 		829F3C4E25652873002C4490 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C4C25652873002C4490 /* NotificationHandler.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		8280F5A6256915D000CEAF23 /* HealthGroupBoxStyleNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGroupBoxStyleNav.swift; sourceTree = "<group>"; };
 		8280F5AB2569160200CEAF23 /* HealthValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthValueView.swift; sourceTree = "<group>"; };
 		8280F5B4256919FD00CEAF23 /* HealthGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGroupBoxStyle.swift; sourceTree = "<group>"; };
+		8280F5D3256D094700CEAF23 /* SmallBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBubbleView.swift; sourceTree = "<group>"; };
 		829F3BF025650F70002C4490 /* Medicine Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medicine Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		829F3BF325650F70002C4490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829F3BF525650F70002C4490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				829F3C3A2565173B002C4490 /* Medicine Reminder WatchKit Extension.entitlements */,
 				829F3C1825650F73002C4490 /* HostingController.swift */,
 				829F3C1A25650F73002C4490 /* ContentView.swift */,
+				8280F5D3256D094700CEAF23 /* SmallBubbleView.swift */,
 				829F3C1C25650F73002C4490 /* ExtensionDelegate.swift */,
 				829F3C1E25650F73002C4490 /* ComplicationController.swift */,
 				829F3C2025650F74002C4490 /* Assets.xcassets */,
@@ -398,11 +401,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8280F5C5256AB45600CEAF23 /* UserData.swift in Sources */,
 				829F3C1B25650F73002C4490 /* ContentView.swift in Sources */,
 				829F3C4E25652873002C4490 /* NotificationHandler.swift in Sources */,
+				8280F5D4256D094700CEAF23 /* SmallBubbleView.swift in Sources */,
 				829F3C1F25650F73002C4490 /* ComplicationController.swift in Sources */,
 				829F3C1925650F73002C4490 /* HostingController.swift in Sources */,
-				829F3C452565203B002C4490 /* UserData.swift in Sources */,
 				829F3C1D25650F73002C4490 /* ExtensionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

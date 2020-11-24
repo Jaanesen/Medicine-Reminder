@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userData: UserData
+    @State var scrollText = false
+    
     var body: some View {
-        Text("Hello, World!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        VStack {
+            Label("Resting Heart Rate", systemImage: "heart.fill")
+                .foregroundColor(.pink)
+            Text("\(userData.getCurrentHR(rHR: userData.lastRestingHeartRate))")
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .padding()
+            Label("Last 7 Days", systemImage: "calendar")
+                .foregroundColor(.pink)
+            SmallBubbleView(values: userData.restingHeartRates, dates: userData.dates)
+                .padding()
+            
+        }
+        .navigationBarTitle("Medicine Reminder")
     }
 }

@@ -26,7 +26,7 @@ struct ContentView: View {
                     .padding([.horizontal, .top])
 
                     GroupBox(label: Label("Resting Heart Rate", systemImage: "heart.fill")) {
-                        HealthValueView(value: userData.getCurrentHR(), unit: "BPM")
+                        HealthValueView(value: userData.getCurrentHR(rHR: userData.lastRestingHeartRate), unit: "BPM")
                     }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
                     .padding([.horizontal])
                     .padding([.top], 5)
@@ -37,8 +37,8 @@ struct ContentView: View {
                     .padding([.horizontal])
                     .padding([.top], 5)
 
-                    GroupBox(label: Label("Last 7 days", systemImage: "calendar")) {
-                                BubbleView(title: "Last 7 days:".uppercased(), values: userData.restingHeartRates, dates: userData.dates)                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
+                    GroupBox(label: Label("Last 7 Days", systemImage: "calendar")) {
+                                BubbleView(values: userData.restingHeartRates, dates: userData.dates)                    }.groupBoxStyle(HealthGroupBoxStyle(color: .pink ))
                     .padding([.horizontal])
                         .padding([.top], 5)
 

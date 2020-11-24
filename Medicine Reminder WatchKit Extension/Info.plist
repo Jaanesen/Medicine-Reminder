@@ -32,11 +32,20 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Your resting heart rate will be used and monitored in order to determine medicine adherence.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Your resting heart rate will be used and monitored in order to determine medicine adherence.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Your resting heart rate will be used and monitored in order to determine medicine adherence.</string>
 	<key>UIBackgroundModes</key>
-	<array/>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>WKBackgroundModes</key>
 	<array>
-		<string>self-care</string>
+		<string>physical-therapy</string>
+		<string>workout-processing</string>
 	</array>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>

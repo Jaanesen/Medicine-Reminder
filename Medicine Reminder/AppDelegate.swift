@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let notificationHandler = NotificationHandler()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+                
         notificationHandler.NotificationAuthorizationHandler()
         UNUserNotificationCenter.current().delegate = self
         
@@ -181,7 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Perform the task associated with the action.
         switch response.actionIdentifier {
         case "YES_ACTION":
-            userData.increaseBoundary(value: 0.1)
+            userData.increaseBoundary(value: 3.0)
             break
             
         case "NO_ACTION":
