@@ -109,7 +109,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         query.initialResultsHandler = {
             _, results, error in
             guard let statsCollection = results else {
-                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription ?? "") ***")
+                NSLog("*** An error occurred while calculating the statistics: \(error?.localizedDescription ?? "") ***")
+                return
             }
             NSLog("Fetching heart rates")
             var values: Array<Double> = []

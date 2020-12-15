@@ -17,7 +17,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            ScrollView {
                 GroupBox(label: Label("Heart Rate Boundary", systemImage: "exclamationmark.circle")) {
                     HealthValueView(value: userData.triggerBoundary, unit: "BPM")
                 }.groupBoxStyle(HealthGroupBoxStyleNav(color: .pink, destination: EditBoundary(bpmBoundary: "\(userData.triggerBoundary)", dynamicBoundary: userData.dynamicBoundary, boundaryGap: "\(userData.dynamicBoundaryGap)")))
