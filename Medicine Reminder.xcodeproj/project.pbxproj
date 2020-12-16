@@ -569,6 +569,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "Medicine Reminder WatchKit Extension/Medicine Reminder WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medicine Reminder WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 2LC65W424L;
 				ENABLE_PREVIEWS = YES;
@@ -578,6 +579,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -594,6 +596,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "Medicine Reminder WatchKit Extension/Medicine Reminder WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medicine Reminder WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 2LC65W424L;
 				ENABLE_PREVIEWS = YES;
@@ -603,6 +606,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -624,6 +628,7 @@
 				DEVELOPMENT_TEAM = 2LC65W424L;
 				IBSC_MODULE = Medicine_Reminder_WatchKit_Extension;
 				INFOPLIST_FILE = "Medicine Reminder WatchKit App/Info.plist";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -644,6 +649,7 @@
 				DEVELOPMENT_TEAM = 2LC65W424L;
 				IBSC_MODULE = Medicine_Reminder_WatchKit_Extension;
 				INFOPLIST_FILE = "Medicine Reminder WatchKit App/Info.plist";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

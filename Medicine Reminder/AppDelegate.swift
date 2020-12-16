@@ -200,6 +200,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 @escaping () -> Void) {
         // Perform the task associated with the action.
         switch response.actionIdentifier {
+        
+        // Boundary Notification:
+        
         case "YES_ACTION":
             userData.increaseBoundary()
             userData.changeNotifyQuestion(bool: false)
@@ -212,6 +215,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             userData.changeRemindQuestion(bool: true)
             break
 
+        // Reminder Notification:
+            
         case "NO_REMINDER_ACTION":
             userData.changeRemindQuestion(bool: false)
             break
