@@ -12,7 +12,6 @@
 		8280F5A7256915D000CEAF23 /* HealthGroupBoxStyleNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5A6256915D000CEAF23 /* HealthGroupBoxStyleNav.swift */; };
 		8280F5AC2569160200CEAF23 /* HealthValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5AB2569160200CEAF23 /* HealthValueView.swift */; };
 		8280F5B5256919FD00CEAF23 /* HealthGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5B4256919FD00CEAF23 /* HealthGroupBoxStyle.swift */; };
-		8280F5C5256AB45600CEAF23 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
 		8280F5D4256D094700CEAF23 /* SmallBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280F5D3256D094700CEAF23 /* SmallBubbleView.swift */; };
 		829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF325650F70002C4490 /* AppDelegate.swift */; };
 		829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3BF525650F70002C4490 /* SceneDelegate.swift */; };
@@ -35,6 +34,8 @@
 		829F3C442565203B002C4490 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
 		829F3C4D25652873002C4490 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C4C25652873002C4490 /* NotificationHandler.swift */; };
 		829F3C4E25652873002C4490 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C4C25652873002C4490 /* NotificationHandler.swift */; };
+		82C37423258A1EEE00C5CB36 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F3C432565203B002C4490 /* UserData.swift */; };
+		82C37428258A215700C5CB36 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C37427258A215700C5CB36 /* EventHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		829F3C3E2565179C002C4490 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		829F3C432565203B002C4490 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		829F3C4C25652873002C4490 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		82C37427258A215700C5CB36 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 			children = (
 				829F3C432565203B002C4490 /* UserData.swift */,
 				829F3C4C25652873002C4490 /* NotificationHandler.swift */,
+				82C37427258A215700C5CB36 /* EventHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				829F3BF425650F70002C4490 /* AppDelegate.swift in Sources */,
 				8280F597256561B100CEAF23 /* BubbleView.swift in Sources */,
+				82C37428258A215700C5CB36 /* EventHandler.swift in Sources */,
 				8280F5AC2569160200CEAF23 /* HealthValueView.swift in Sources */,
 				829F3BF625650F70002C4490 /* SceneDelegate.swift in Sources */,
 				8280F5A7256915D000CEAF23 /* HealthGroupBoxStyleNav.swift in Sources */,
@@ -401,9 +405,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8280F5C5256AB45600CEAF23 /* UserData.swift in Sources */,
 				829F3C1B25650F73002C4490 /* ContentView.swift in Sources */,
 				829F3C4E25652873002C4490 /* NotificationHandler.swift in Sources */,
+				82C37423258A1EEE00C5CB36 /* UserData.swift in Sources */,
 				8280F5D4256D094700CEAF23 /* SmallBubbleView.swift in Sources */,
 				829F3C1F25650F73002C4490 /* ComplicationController.swift in Sources */,
 				829F3C1925650F73002C4490 /* HostingController.swift in Sources */,

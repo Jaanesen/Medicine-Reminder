@@ -198,32 +198,4 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
         
         completionHandler([.badge, .sound])
     }
-    
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler:
-                                    @escaping () -> Void) {
-        
-        // Perform the task associated with the action.
-        switch response.actionIdentifier {
-        case "YES_ACTION":
-            userData.increaseBoundary()
-            break
-            
-        case "NO_ACTION":
-            userData.logCorrectWarning(date: Date())
-            break
-            
-        // Handle other actions…
-        
-        default:
-            break
-        }
-        
-        // Always call the completion handler when done.
-        completionHandler()
-    }
-
-
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import EventKit
 
 class UserData: ObservableObject {
     @Published var lastRestingHeartRate: Double = 0.0
@@ -15,9 +16,13 @@ class UserData: ObservableObject {
     @Published var dynamicBoundary: Bool = true
     @Published var dynamicBoundaryGap: Double = 3.0
     @Published var warningDates: Array<Date> = []
+    @Published var notifyQuestion: Bool = false
+    @Published var remindQuestion: Bool = false
     var lastWarnDate: Date = Date().addingTimeInterval(-604800)
 
     let notificationHandler = NotificationHandler()
+    let eventStore = EKEventStore()
+
     
     init() {
         self.triggerBoundary = UserDefaults.standard.object(forKey: "triggerBoundary") as? Double ?? 0.0
@@ -44,6 +49,18 @@ class UserData: ObservableObject {
         dynamicBoundary = bool
         UserDefaults.standard.set(dynamicBoundary, forKey: "dynamicBoundary")
     }
+    
+    func changeNotifyQuestion(bool: Bool) {
+        notifyQuestion = bool
+
+        NSLog("Changed notifyQuestion to: \(notifyQuestion)")
+    }
+    
+    func changeRemindQuestion(bool: Bool) {
+        remindQuestion = bool
+        NSLog("Changed notifyQuestion to: \(remindQuestion)")
+    }
+
 
     func setRestingHRs(heartRates: Array<Double>, dates: Array<Date>) {
         NSLog("Setting resting heart rates")
@@ -57,12 +74,17 @@ class UserData: ObservableObject {
                 NSLog("Initial resting heart rate: \(self.lastRestingHeartRate)")
                 return
             }
+            //Check for new resting Heart Rate
+            if self.isHRCurrent() && self.lastRestingHeartRate != heartRates[heartRates.count - 1]{
+                self.setLastRestingHR(heartRate: heartRates[heartRates.count - 1])
+            }
             NSLog("Checking notification trigger")
             //Check notification trigger
             if self.isHRCurrent() && self.lastRestingHeartRate > self.triggerBoundary && self.timeChecker() && self.triggerBoundary > 20.0 {
                 NSLog("Passed trigger")
                 if self.lastWarnDate.addingTimeInterval(600) < Date() {
                     NSLog("Passed Date check")
+                    self.changeNotifyQuestion(bool: true)
                     self.lastWarnDate = Date()
                     self.notificationHandler.SendActionNotification(title: "Beta-blocker warning!", body: "Your resting heart rate value is: \(self.lastRestingHeartRate). This is above your set boundary: \(self.triggerBoundary). Have you remembered your medication today?", timeInterval: 1)
                     NSLog("Sent notification")
