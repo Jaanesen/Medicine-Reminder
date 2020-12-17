@@ -141,7 +141,7 @@ class UserData: ObservableObject {
         let calendar = Calendar.current
         let now = Date()
         let startTime = calendar.date(
-            bySettingHour: 9,
+            bySettingHour: 14,
             minute: 0,
             second: 0,
             of: now)!
