@@ -579,7 +579,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -606,7 +606,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -628,7 +628,7 @@
 				DEVELOPMENT_TEAM = 2LC65W424L;
 				IBSC_MODULE = Medicine_Reminder_WatchKit_Extension;
 				INFOPLIST_FILE = "Medicine Reminder WatchKit App/Info.plist";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -649,7 +649,7 @@
 				DEVELOPMENT_TEAM = 2LC65W424L;
 				IBSC_MODULE = Medicine_Reminder_WatchKit_Extension;
 				INFOPLIST_FILE = "Medicine Reminder WatchKit App/Info.plist";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -677,7 +677,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -702,7 +702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.jaanesen.Medicine-Reminder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

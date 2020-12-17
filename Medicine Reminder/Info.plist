@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSRemindersUsageDescription</key>
-	<string>To schedule medicine reminders</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>no.jaanesen.MedicineReminder.refresh</string>
@@ -32,6 +30,8 @@
 	<string>Your resting heart rate will be used and monitored in order to determine medicine adherence.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Your resting heart rate will be used and monitored in order to determine medicine adherence.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>To schedule medicine reminders</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

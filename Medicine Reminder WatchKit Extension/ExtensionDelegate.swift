@@ -122,7 +122,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
         }
         
         guard let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.restingHeartRate) else {
-            fatalError("*** Unable to create a step count type ***")
+            NSLog("*** Unable to create a resting heart rate type ***")
+            return
         }
         
         // Create the query
@@ -136,7 +137,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
         query.initialResultsHandler = {
             _, results, error in
             guard let statsCollection = results else {
-                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription ?? "") ***")
+                NSLog("*** An error occurred while calculating the statistics: \(error?.localizedDescription ?? "") ***")
+                return
             }
             NSLog("Fetching heart rates")
             var values: Array<Double> = []

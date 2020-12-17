@@ -108,7 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
 
         guard let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.restingHeartRate) else {
-            fatalError("*** Unable to create a step count type ***")
+            NSLog("*** Unable to create a resting heart rate type ***")
+            return
         }
 
         // Create the query
