@@ -16,6 +16,7 @@ struct BubbleView: View {
             ForEach(values.indices, id: \.self) { i in
                 VStack {
                     Text(getDaysList(dates: dates)[i])
+                        .font(.system(size: 17))
                         .frame(width: 35, alignment: .center)
 
                     Text("\(Int(values[i]))")
