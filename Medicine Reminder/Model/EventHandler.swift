@@ -31,4 +31,12 @@ class EventHandler {
         
         try! eventStore.save(newReminder, commit: true)
     }
+    
+    // MARK: - Event Authorization
+    
+    func authorizeEventKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
+        eventStore.requestAccess(to: .reminder) { success, error in
+            completion(success, error)
+        }
+    }
 }

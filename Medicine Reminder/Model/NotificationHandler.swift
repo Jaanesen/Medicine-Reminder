@@ -9,9 +9,7 @@ import SwiftUI
 import UserNotifications
 
 class NotificationHandler {
-    
-    @EnvironmentObject var userData: UserData
-    
+        
     func SendActionNotification(title: String, body: String, timeInterval: Double) {
         // Define the custom actions.
         let yesAction = UNNotificationAction(identifier: "YES_ACTION",
