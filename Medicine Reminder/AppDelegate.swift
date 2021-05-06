@@ -58,8 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     // MARK: - HealthHandler
+    
+    
 
-    // MARK: - Observer Query
+    // MARK: Observer Query
     
     func startObserver() {
         guard let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.restingHeartRate) else {
